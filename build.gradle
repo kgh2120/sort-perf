@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "me.champeau.jmh" version "0.7.1"
 }
 
 group 'org.example'
@@ -16,4 +17,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+jmh{
+    fork = 1
+    iterations = 10
+    warmupIterations = 1
 }
