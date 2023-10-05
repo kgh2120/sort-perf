@@ -58,6 +58,7 @@ class Sort {
     @BeforeAll
     static void beforeAll() {
         shuffledCase();
+        System.out.printf("정렬 시작 : N : %d \n", N);
     }
     @AfterAll
     static void afterAll(){
