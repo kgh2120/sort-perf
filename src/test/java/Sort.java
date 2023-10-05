@@ -392,14 +392,18 @@ class Sort {
      */
     @Test
     void heapSortTest() {
+Node[] sortedNode = new Node[use.length+1];
         long start = System.nanoTime();
         Node[] heap = heapSort(use);
+        for (int i = 0; i < use.length; i++) {
+            sortedNode[i] = deleteHeap(heap, heap.length - 1 - i);
+        }
+
         long end = System.nanoTime();
 
         assertAll(() -> {
             for (int i = 0; i < use.length; i++) {
-                Node node = deleteHeap(heap, heap.length - 1 - i);
-                assertEquals(node.value, sorted[i]);
+                assertEquals(sortedNode[i].value, sorted[i]);
             }
         });
 
